@@ -615,7 +615,8 @@ export default {
         let ctime = this.checked.year + '-' + this.checked.month + '-' + day
         if (obj.checked === true) {
           obj.checked = false
-          this.selectedDays.$remove(ctime)
+            // this.selectedDays.$remove(ctime) /* edited by the boss */
+            this.selectedDays.splice(this.selectedDays.indexOf(ctime), 1)
         } else {
           this.selectedDays.push(ctime)
           obj.checked = true
